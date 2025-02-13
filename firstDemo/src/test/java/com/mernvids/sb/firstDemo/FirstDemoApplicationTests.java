@@ -1,10 +1,10 @@
-package com.macharam.demo;
+package com.mernvids.sb.firstDemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class FirstDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
