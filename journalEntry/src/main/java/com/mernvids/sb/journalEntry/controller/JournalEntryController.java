@@ -12,13 +12,13 @@ public class JournalEntryController {
 
     private Map<Long, JournalEntry> journalEntries=new HashMap<>();
 
-    @GetMapping
+    @GetMapping("/get")
     public List<JournalEntry> getAll()
     {
         return new ArrayList<>(journalEntries.values());
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public boolean createEntry(@RequestBody JournalEntry myEntry){
         journalEntries.put(myEntry.getId(),myEntry);
         return true;
