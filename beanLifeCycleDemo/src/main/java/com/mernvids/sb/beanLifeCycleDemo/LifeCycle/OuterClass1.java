@@ -1,4 +1,4 @@
-package com.mernvids.sb.beanLifeCycleDemo;
+package com.mernvids.sb.beanLifeCycleDemo.LifeCycle;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
