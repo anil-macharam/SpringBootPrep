@@ -2,7 +2,7 @@ package com.mernvids.sb.beanLifeCycleDemo.AppConfigExample;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class User {
 
     String username;
@@ -11,28 +11,28 @@ public class User {
         this.email = email;
         this.username = username;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-//    public User()
-//    {
-//        System.out.println("Inside default constructor");
+//
+//    public String getUsername() {
+//        return username;
 //    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+
+    public User()
+    {
+        System.out.println("Inside default constructor");
+    }
     public void displayUserInfo() {
-        System.out.println(getEmail()+getUsername());
+        System.out.println(email + username);
     }
 }

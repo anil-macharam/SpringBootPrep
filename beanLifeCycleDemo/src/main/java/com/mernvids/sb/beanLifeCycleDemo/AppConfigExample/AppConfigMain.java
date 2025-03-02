@@ -9,6 +9,8 @@ public class AppConfigMain {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(AppConfigMain.class, args);
         System.out.println("Running AppConfigExampleMain...");
+        User user = context.getBean(User.class);
+        user.displayUserInfo();
         context.close();
     }
 }
