@@ -10,14 +10,14 @@ public class OuterClass1 {
     @Autowired
     OuterClass a;
 
-    public void usingOuterclassMethod()
-    {
-        a.method1();
-    }
+//    public void usingOuterclassMethod()
+//    {
+//        a.method1();
+//    }
     @PostConstruct
     public void initialize(){
         System.out.println("some Post construction is done");
-        usingOuterclassMethod();
+        a.method1();
     }
 
     public OuterClass1()

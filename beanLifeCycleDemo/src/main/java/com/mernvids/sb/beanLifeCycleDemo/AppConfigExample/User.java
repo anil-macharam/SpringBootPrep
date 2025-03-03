@@ -11,24 +11,7 @@ public class User {
         this.email = email;
         this.username = username;
     }
-//
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-
-    public User()
+    public User()//This wont be called
     {
         System.out.println("Inside default constructor");
     }
