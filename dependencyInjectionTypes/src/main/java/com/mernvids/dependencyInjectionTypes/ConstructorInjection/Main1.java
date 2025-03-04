@@ -1,4 +1,4 @@
-package com.mernvids.dependencyInjectionTypes;
+package com.mernvids.dependencyInjectionTypes.ConstructorInjection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -6,37 +6,43 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-@Component  // Marks this as a Spring-managed bean
+@Component
 class Engine {
     public void start() {
         System.out.println("🚗 Engine started!");
     }
 }
 
-// 🚙 Car class depends on Engine
 @Component
 class Car {
-    @Autowired  // 🔴 Field Injection (Spring injects Engine here)
-    private Engine engine;
+    private final Engine engine;  // `final` means this dependency is required
+
+    @Autowired  // 🟣 Constructor Injection
+    public Car(Engine engine) {
+        this.engine = engine;  // Assigns Engine when Car is created
+    }
 
     public void drive() {
-        engine.start();  // Calls Engine's start() method
+        engine.start();
         System.out.println("🚗 Car is driving...");
     }
 }
 
-// 🏁 Main Class to Start the Application
 @SpringBootApplication
-public class Main implements CommandLineRunner {  // Ensures code runs on startup
-    @Autowired
-    private Car car;  // 🔴 Field Injection (Spring injects Car)
+public class Main1 implements CommandLineRunner {
+    private final Car car;  // `final` because it's required
+
+    @Autowired  // 🟣 Constructor Injection for Car
+    public Main1(Car car) {
+        this.car = car;
+    }
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);  // Spring Boot starts
+        SpringApplication.run(Main1.class, args);
     }
 
     @Override
     public void run(String... args) {
-        car.drive();  // ✅ Calls Car's drive method
+        car.drive();
     }
 }
