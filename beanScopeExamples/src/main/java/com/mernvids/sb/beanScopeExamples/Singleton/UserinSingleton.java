@@ -1,10 +1,12 @@
 package com.mernvids.sb.beanScopeExamples.Singleton;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
+@Lazy
 @Scope("singleton")
 public class UserinSingleton {
     public UserinSingleton()

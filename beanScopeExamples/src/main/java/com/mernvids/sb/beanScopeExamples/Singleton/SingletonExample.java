@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@Component
+//@RestController
+//@Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 //Either the above Enum or @Scope("Singleton") both are same only
 public class SingletonExample {
