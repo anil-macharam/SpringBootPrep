@@ -1,0 +1,14 @@
+Bean scopes:
+singleton(eager and default):one object per IOC
+
+Prototype(lazy):: Every time we access new object will be created
+
+Request(lazy):: One object per HTTP request, every time you hit a HTTP request new one will be created
+---> Also, in request see shreyansh notes/video there is one scenario where lets say one class has singleton scope
+     and the other is marked as request scope.. in his example user is request.. if first class is having dependency
+     on the user, then without a http request user does not even bother to do anything.. then how can a object get created?
+     thats where proxymode comes in this is like if you want i will give a dummy object even if you come to me without
+     http request.. and then when you actually calls me through http request I will create the original one and gets initialized
+
+Session(lazy):: As long as you are in one session you will be having the same object no matter how many times you hit the requests
+
