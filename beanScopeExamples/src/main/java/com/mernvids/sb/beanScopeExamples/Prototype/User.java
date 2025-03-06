@@ -1,9 +1,11 @@
 package com.mernvids.sb.beanScopeExamples.Prototype;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
+@ConditionalOnProperty(name = "app.run.prototype", havingValue = "true", matchIfMissing = false)
 @Scope("prototype")
 //New object every time and lazy initialization
 public class User {

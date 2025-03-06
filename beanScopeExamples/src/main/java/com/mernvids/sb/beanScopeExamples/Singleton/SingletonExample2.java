@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
@@ -12,8 +13,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//@RestController
-//@Component
+@RestController
+@Component
+@ConditionalOnProperty(name = "app.run.singleton", havingValue = "true", matchIfMissing = false)
 @Lazy
 //@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 ////Either the above Enum or @Scope("singleton") both are same only

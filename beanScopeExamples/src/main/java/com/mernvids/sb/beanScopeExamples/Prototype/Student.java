@@ -2,10 +2,12 @@ package com.mernvids.sb.beanScopeExamples.Prototype;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
+@ConditionalOnProperty(name = "app.run.prototype", havingValue = "true", matchIfMissing = false)
 @Scope("singleton")
 public class Student {
     public Student()

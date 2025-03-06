@@ -12,3 +12,12 @@ Request(lazy):: One object per HTTP request, every time you hit a HTTP request n
 
 Session(lazy):: As long as you are in one session you will be having the same object no matter how many times you hit the requests
 
+
+Conditional on properties demonstration::
+
+Since i wanted to put all of the examples in one package.. but i have many beans here that are running at the
+application startup.. First i tried commenting out all the @components and @restcontrollers to make them ineligible
+for bean creation... but later on i decided to put @ConditionOnProperty on Prototype(so i will make only prototype
+beans to get created)
+
+

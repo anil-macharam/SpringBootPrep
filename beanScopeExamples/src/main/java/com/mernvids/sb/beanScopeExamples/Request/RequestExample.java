@@ -2,6 +2,7 @@ package com.mernvids.sb.beanScopeExamples.Request;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/")
 @Scope("request")
+@ConditionalOnProperty(name = "app.run.request", havingValue = "true", matchIfMissing = false)
 public class RequestExample {
     @Autowired
     User user1;
